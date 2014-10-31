@@ -9,14 +9,18 @@
 <head>
 <title>Reuters search engine</title>
 </head>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="style.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/autocomplete.js"></script>
 
 <script type="text/javascript">
 
 function getResult() {
 	
-	var searchTerm = $("#query").val();
+	var searchTerm = $("#tags").val();
 	
 	if(searchTerm.length > 0)
 	{
@@ -48,7 +52,11 @@ function getResult() {
 <body>
 
 <h2>Reuters Search Engine</h2>
-<input type="text" name="query" id="query"> 
+<div class="ui-widget">
+<input id="tags" size="50" name="query" type="text"/>
+</div>
+<span id="faux" style="display:none;"></span><br>
+<!-- <input type="text" name="query" id="query"> --> 
 <input type="submit" name="Search" id="submit" value="Search" onclick="getResult()">
 
 <div id="result"></div>
